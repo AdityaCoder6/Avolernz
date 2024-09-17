@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --main-color:#8e44ad;
+    --black:#222;
+    --white:#fff;
+    --light-black:#777;
+    --light-white:#fff9;
+    --dark-bg:rgba(0,0,0,.7);
+    --light-bg:#eee;
+    --border:1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --text-shadow:0 1.5rem 3rem rgba(0,0,0,.3);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+.circle{
+    height: 120px;
+    width: 120px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    border-radius: 70px;
+    animation: animateX 7s linear infinite,
+                animateY 1s ease-out infinite alternate;
+}
+
+@keyframes animateX{
+    from{
+        left: 0;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes animateY{
+    from{
+        bottom: 0;
+    }
+    to{
+        bottom: 100%;
+    }
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+.header{
+    position: sticky;
+    background-color: var(--white);
+    display: flex;
+    top: 0;left: 0;right: 0;
+    z-index: 1000;
+    padding: 5rem 10%;
+    padding-top: 2rem;padding-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.header .logo{
+    font-size: 2.5rem;
+}
+.navbar a{
+    padding: 2rem;
+    font-size: 2rem;
+}
+.navbar a:hover, .header a:hover{
+    color: var(--main-color);
+}
+
+section{
+    background-color: #1a232e;
+}
+@keyframes fadeIn {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+.home{
+    background-color: white;
+    padding: 0;
+}
+.home-slider{
+    position: relative;
+    margin: auto;
+}
+.home .slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+.home .slide:first-child{
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position-y: 70%;
+    min-height: 60rem;
+    background-repeat: no-repeat;
+}
+.home .slide .content{
+    width: 85rem;
+    
+}
+.home .slide .content h3{
+    font-size: 9rem;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: var(--text-shadow);
+    padding: 1rem 0;
+    line-height: 1;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.2s linear backwards 0.4s;
+}
+.content .btn{
+    background-color: var(--black);
+    padding: 1rem 3rem;
+    color: var(--white);
+    font-size: 1.8rem;
+    animation: fadeIn 0.2s linear backwards 0.6s;
+}
+
+
+.content .btn:hover, .about a:hover{
+    background-color: var(--main-color);
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  .services{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.services h1, .client h1, .price h1, .book h1, .testimonial h1{
+    font-size: 5rem;
+    color: var(--black);
+    padding-bottom: 3rem;
+    text-transform: uppercase;
+}
+.box-container1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+    width: 90%;
+}
+
+.box1{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 90%;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+.box1:hover{
+    background-color: var(--black);
+}
+.box1 img{
+    filter: invert(1);
+}
+.box1 h2{
+    font-size: 1.7rem;
+}
+  .home-about-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5rem;
+    width: 80%;
+    margin: auto;
+    flex: content;
+    gap: 2rem;
+  }
+
+.about{
+    width: 55%;
+    /* height: 35vh; */
+    /* padding: 5rem; */
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    box-shadow: var(--box-shadow);
+}
+.about h3{
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.about a, .book .btn{
+    background-color: var(--black);
+    padding: 1rem 2rem;
+    color: var(--white);
+    font-size: 1.3rem;
+    width: 25%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.about p{
+    margin-top: 2rem;
+    line-height: 2.4;
+    font-size: 1.3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.client{
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 1rem;
+}
+.box-container2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    margin-bottom: 5rem;
+}
+.box-container2 .box .image img{
+    transition: .2s linear;
+}
+.box-container2 .box{
+    text-align: center;
+    padding-top: 2rem;
+    margin: auto;
+}
+.box-container2 .box .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box-container2 .content a{
+    background-color: var(--black);
+    padding: 1rem 2rem;
+    color: var(--white);
+    font-size: 1.3rem;
+    width: 30%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    text-align: center;
+    
+}
+.box-container2 .box{
+    border: 10px solid var(--border);
+    box-shadow: var(--box-shadow);
+    background: var(--white);
+    width: 80%;
+}
+.box-container2 .content h3{
+    color: var(--black);
+    font-size: 2rem;
+}
+.box-container2 .content p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--light-black);
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+}
+.price .web{
+    display: flex;
+    column-gap: 20%;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+.web h2{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.web p{
+    font-size: 1.5rem;
+}
+.web:nth-child(4) p{
+    margin-left: -7%;
+}
+.web:nth-child(4){
+    margin-bottom: 5%;
+}
+.book h1{
+    text-align: center;
+}
+.book .book-form{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+}
+.book .book-form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 80%;
+    background: var(--light-bg);
+    padding: 2.5rem;
+    margin: auto;
+}
+.book .book-form .flex .inputbox{
+    flex: 1 1 41rem;
+}
+.book .book-form .flex .inputbox input{
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    color: var(--light-black);
+    margin-top: 1.5rem;
+    border: 1rem solid var(--border);
+    text-transform: none;
+}
+.book .book-form .flex .inputbox input:focus{
+    background: var(--black);
+    color: var(--white);
+}
+.book .book-form .flex .inputbox input:focus::placeholder{
+    background: var(--black);
+    color: var(--light-white);
+}
+.testimonial{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user{
+    background-color: var(--light-bg);
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    width: 60%;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+.user h3{
+    display: flex;
+    align-items: center;
+}
+.user p{
+    background-color: antiquewhite;
+}
+.contact{
+    background-color: var(--white);
+}
+.footer{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-left: 14%;
+}
+
+.box a{
+    color: #eee;
+    font-size: 1.4rem;
+}
+.box h3{
+    color: white;
+    font-size: 2rem;
+}
+.box a i{
+    color: var(--main-color);
+    padding-right: 0.5rem;
+    transition: .2s linear;
+}
+.box a:hover i{
+    padding-right: 2rem;
+}
+.footer .credit{
+    text-align: center;
+    color: #fff;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: .1rem solid var(--light-white);
+    font-size: 1.2rem;
+}
+.credit span{
+    color: var(--main-color);
+}
+.black{
+    height: 38vh;
+    background-image: url("images/fbg.jpg");
+    background-position: center;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.2;
+}
+
+@media (max-width:1200px) {
+    .header{
+        padding: 3rem 5%;
+    }
+}
+@media (max-width:1000px) {
+    html{
+        font-size: 50.5%;
+    }
+    .header{
+        padding: 3rem 5%;
+    }
+    .home-about-section{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .home-about-section img{
+        width: 70%;
+    }
+}
+@media (max-width:760px){
+    .header .navbar a{
+        padding: 1rem;
+        font-size: 1.8rem;
+    }
+    
+    .box-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 14%;
+        row-gap: 8%;
+    }
+    .footer .credit{
+        margin-top: 4rem;
+    }
+    .home .slide .content h3{
+        font-size: 7rem;
+    }
+    .about{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width:560px) {
+    .header .navbar a{
+        padding: 0.4rem;
+        font-size: 1.5rem;
+    }
+    .header .logo{
+        font-size: 1.9rem;
+    }
+    .services h1, .client h1, .price h1, .testimonial h1{
+        font-size: 3.5rem;
+    
+    }
+    .price h2{
+        font-size: 2rem;
+    }
+    .home .slide .content h3{
+        font-size: 5rem;
+    }
+    .content .btn{
+        padding: 0.5rem 0.5rem;
+        font-size: 1.3rem;
+    }
+    .box{
+        width: 60%;
+    }
+}
+
+@media (max-width:370px) {
+    .header .navbar a{
+        padding: 0.2rem;
+        font-size: 1.3rem;
+    }
+    .header .logo{
+        font-size: 1.7rem;
+    }
+    .services h1, .client h1, .price h1, .testimonial h1{
+        font-size: 3.2rem;
+    
+    }
+    .price h2{
+        font-size: 1.5rem;
+    }
+    .home .slide .content h3{
+        font-size: 3rem;
+    }
+}
